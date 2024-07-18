@@ -20,6 +20,7 @@
 // import { useHomePageStyles } from './home.style';
 // import { Routes } from '../../router/routes';
 
+import ParticipantSlider from './components/card/card-slider.component';
 import ChessEventPoster from './components/chess-event/chess-event.component';
 import PromoBanner from './components/promo-banner/promo-banner.component';
 import StepsComponent from './components/steps/steps.component';
@@ -81,6 +82,8 @@ function HomeComponent() {
         adminContact='К. Михельсону'
       />
       <StepsComponent/>
+            <ParticipantSlider />
+
     </>
   );
 }

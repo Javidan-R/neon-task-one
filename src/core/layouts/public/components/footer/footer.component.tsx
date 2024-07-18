@@ -8,6 +8,7 @@ import useLocalization from '../../../../../assets/lang';
 import { environment } from '../../../../configs/app.config';
 import { useFooterStyles } from './footer.style';
 import { Routes } from '../../../../../router/routes';
+import TextSlider from '../../../../../pages/home/components/text-slider/text-slider.component';
 
 
 const FooterComponent = () => {
@@ -26,6 +27,7 @@ const FooterComponent = () => {
 
   return (
     <div className={classes.footerContainer}>
+      <TextSlider/>
       <footer className={footerClasses}>
         <Row className={classes.footerSm}>
         {translate('footer')}
