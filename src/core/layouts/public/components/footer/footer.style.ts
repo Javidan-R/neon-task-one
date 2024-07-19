@@ -6,7 +6,7 @@ import sizes from '../../../../../assets/styles/abstracts/sizes';
 
 const styles: Styles = {
   footerContainer: {
-    marginTop: rem(250),
+    marginTop: rem(150),
     width: sizes.full,
     [breakpoint(390)]: {
       marginTop: rem(90),

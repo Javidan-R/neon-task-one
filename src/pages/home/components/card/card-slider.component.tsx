@@ -1,13 +1,12 @@
-// src/components/ParticipantSlider.tsx
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { createUseStyles } from 'react-jss';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import cardBackground from '../../../../assets/images/statics/cardBack.png';
 import cardImage from '../../../../assets/images/statics/Group 16.png';
 import ParticipantCard from './card.component';
+import { useStyles } from './card.style';
 
 const participants = [
   {
@@ -18,45 +17,14 @@ const participants = [
   {
     name: 'Эммануил Ласкер',
     title: 'Чемпион мира по шахматам',
-    img: 'path/to/image2.jpg'
+    img: cardImage
   },
   {
     name: 'Александр Алехин',
     title: 'Чемпион мира по шахматам',
-    img: 'path/to/image3.jpg'
+    img: cardImage
   },
-  // Add more participants as needed
 ];
-
-const useStyles = createUseStyles({
-  sliderContainer: {
-    maxWidth: 1200,
-    margin: '0 auto',
-    padding: '0 20px',
-    position: 'relative',
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  navControls: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  customNav: {
-    cursor: 'pointer',
-    fontSize: 20,
-    marginLeft: 10,
-  },
-  counter: {
-    fontSize: 16,
-  },
-  slickDots: {
-    bottom: -30,
-  },
-});
 
 const ParticipantSlider: React.FC = () => {
   const classes = useStyles();
@@ -64,7 +32,6 @@ const ParticipantSlider: React.FC = () => {
   const [slider, setSlider] = useState<Slider | null>(null);
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -93,20 +60,33 @@ const ParticipantSlider: React.FC = () => {
     ),
   };
 
+  const memoizedClasses = useMemo(
+    () => ({
+      sliderContainer: classes.sliderContainer,
+      header: classes.header,
+      headerContent: classes.headerContent,
+      navControls: classes.navControls,
+      customNav: classes.customNav,
+      counter: classes.counter,
+      slickDots: classes.slickDots,
+    }),
+    [classes]
+  );
+
   return (
-    <div className={classes.sliderContainer}>
-      <div className={classes.header}>
-        <h2>Участники турнира</h2>
-        <div className={classes.navControls}>
-          <span className={classes.counter}>
-            {currentSlide + 1} / {participants.length}
-          </span>
+    <div className={memoizedClasses.sliderContainer}>
+      <div className={memoizedClasses.header}>
+        <h2 className={memoizedClasses.headerContent}>Участники турнира</h2>
+        <div className={memoizedClasses.navControls}>    
           <LeftOutlined
-            className={classes.customNav}
+            className={memoizedClasses.customNav}
             onClick={() => slider?.slickPrev()}
           />
+          <span className={memoizedClasses.counter}>
+            {currentSlide + 1} / {participants.length}
+          </span>
           <RightOutlined
-            className={classes.customNav}
+            className={memoizedClasses.customNav}
             onClick={() => slider?.slickNext()}
           />
         </div>

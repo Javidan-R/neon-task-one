@@ -13,12 +13,10 @@ const TextSlider = () => {
   ];
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
@@ -43,7 +41,7 @@ const TextSlider = () => {
     <div className={classes.carouselContainer}>
       <Slider {...settings} className={classes.slider}>
         {texts.map((text, index) => (
-          <div key={index} className={classes.sliderContainer}>
+          <div key={index} className={classes.sliderItem}>
             <span className={classes.dot}></span>
             <span className={classes.sliderContent}>{text.toUpperCase()}</span>
           </div>

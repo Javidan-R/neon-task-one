@@ -1,14 +1,10 @@
-import { Col, Flex, Row, Typography } from 'antd';
+import { Row } from 'antd';
 import classNames from 'classnames';
 import { useMemo } from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from '../../../../../assets/images/icons/logo';
-import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from '../../../../../assets/images/icons/socials';
 import useLocalization from '../../../../../assets/lang';
-import { environment } from '../../../../configs/app.config';
 import { useFooterStyles } from './footer.style';
-import { Routes } from '../../../../../router/routes';
 import TextSlider from '../../../../../pages/home/components/text-slider/text-slider.component';
+import Paragraph from 'antd/es/typography/Paragraph';
 
 
 const FooterComponent = () => {
@@ -30,7 +26,9 @@ const FooterComponent = () => {
       <TextSlider/>
       <footer className={footerClasses}>
         <Row className={classes.footerSm}>
+      <Paragraph color='#313131'>
         {translate('footer')}
+      </Paragraph>
         </Row>
       </footer>
     </div>

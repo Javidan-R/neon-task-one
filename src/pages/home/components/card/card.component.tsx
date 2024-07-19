@@ -1,51 +1,36 @@
-// src/components/ParticipantCard.tsx
-import React from 'react';
-import { Card, Button } from 'antd';
-import { createUseStyles } from 'react-jss';
+import React, { useMemo } from 'react';
+import { useStyles } from './card.style'; 
+import { Link } from 'react-router-dom';
 
-interface ParticipantCardProps {
-  name: string;
-  title: string;
-  img: string;
-  background: string;
-}
-
-const useStyles = createUseStyles({
-  card: {
-    width: '100%',
-    maxWidth: 394,
-    height: 462,
-    textAlign: 'center',
-    margin: 'auto',
-    overflow: 'hidden',
-  },
-  img: {
-        backgroundImage: ({ background }: { background: string }) => `url(${background})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    borderRadius: '50%',
-    width: '200px',
-    height: '200px',
-    margin: '20px auto',
-  },
-  button: {
-    marginTop: 10,
-  }
-});
-
-const ParticipantCard: React.FC<ParticipantCardProps> = ({ name, title, img, background  }) => {
-  const classes = useStyles({ background });
+const Card: React.FC<CardProps> = ({ name, title, img, background }) => {
+  const classes = useStyles();
+  
+  const memoizedClasses = useMemo(
+    () => ({
+      card: classes.card,
+      cover: classes.cover,
+      img: classes.img,
+      name: classes.name,
+      title: classes.title,
+      button: classes.button,
+    }),
+    [classes]
+  );
 
   return (
-    <Card
-      hoverable
-      className={classes.card}
-      cover={<img alt={name} src={img} className={classes.img} />}
-    >
-      <Card.Meta title={name} description={title} />
-      <Button type="primary" className={classes.button}>Подробнее</Button>
-    </Card>
+    <div className={memoizedClasses.card}>
+      <div
+        className={memoizedClasses.cover}
+        style={{ backgroundImage: `url(${background})` }}>
+        <img alt={name} src={img} className={memoizedClasses.img} />
+      </div>
+      <h3 className={memoizedClasses.name}>{name}</h3>
+      <p className={memoizedClasses.title}>{title}</p>
+      <Link to={'/'}>
+        <button className={memoizedClasses.button}>Подробнее</button>
+      </Link>
+    </div>
   );
 };
 
-export default ParticipantCard;
+export default Card;

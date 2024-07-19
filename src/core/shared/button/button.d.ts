@@ -5,6 +5,5 @@ interface ButtonStylesProps {
 }
   interface IButtonProps extends ButtonProps {
   type:'primary' | 'secondary',
-  arrow?:'down' | 'right' | 'up' 
 }
   

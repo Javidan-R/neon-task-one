@@ -1,50 +1,190 @@
 import { createUseStyles } from 'react-jss';
+import { breakpoint } from '../../../../assets/styles/abstracts/mixins';
+import { rem } from '../../../../assets/styles/abstracts/functions';
 
 export const useStyles = createUseStyles({
-    container: {
-      display: 'flex',
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: rem(40),
+    textAlign: 'center',
+    [breakpoint(1024)]: {
       flexDirection: 'column',
-      alignItems: 'center',
-      padding: '20px',
-      textAlign: 'center',
-      '@media (min-width: 768px)': {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        textAlign: 'left',
-      },
+      justifyContent: 'space-between',
+      textAlign: 'left',
     },
-    image: {
+  },
+  rightImages: {
+    position: 'relative',
+    width: '100%',
+    height: rem(400),
+    [breakpoint(1024)]: {
       width: '100%',
-      '@media (min-width: 768px)': {
-        width: '50%',
-      },
+      height: rem(300),
     },
-    content: {
-      marginTop: '20px',
-      '@media (min-width: 768px)': {
-        marginTop: '0',
-        marginLeft: '20px',
-        width: '50%',
-      },
+  },
+  eventback: {
+    position: 'absolute',
+    width: rem(437),
+    height: rem(405),
+    objectFit: 'cover',
+    left: '0',
+    [breakpoint(1024)]: {
+      width: rem(330),
+      height: rem(300),
+      top: rem(20),
+      left: '50%',
+      transform: 'translateX(-50%)',
     },
-    header: {
-      fontSize: '24px',
-      color: 'red',
+  },
+  topvector: {
+    position: 'absolute',
+    bottom: '30%',
+    left: '-7%',
+    width: rem(500),
+    height: rem(343),
+    [breakpoint(1024)]: {
+      bottom: '10%',
+      left: '10%',
+      width: rem(400),
+      height: rem(300),
     },
-    text: {
-      fontSize: '18px',
+  },
+  rubl: {
+    position: 'absolute',
+    top: '-7%',
+    right: '-2%',
+    width: rem(121),
+    height: rem(240),
+    [breakpoint(1024)]: {
+      top: rem(0),
+      right: '20%',
+      width: rem(100),
+      height: rem(200),
     },
-    table: {
-      marginTop: '10px',
-      borderCollapse: 'collapse',
+  },
+  man: {
+    position: 'absolute',
+    top: rem(30),
+    right: rem(100),
+    width: rem(325),
+    height: rem(331),
+    [breakpoint(1024)]: {
+      top: rem(60),
+      right: '50%',
+      transform: 'translateX(50%)',
+      width: rem(300),
+      height: rem(270),
+    },
+  },
+  blackHourse: {
+    position: 'absolute',
+    bottom: rem(-50),
+    left: rem(50),
+    width: rem(100),
+    height: rem(148.92),
+    [breakpoint(1024)]: {
+      bottom: rem(-30),
+      left: '30%',
+      transform: 'translateX(-50%)',
+      width: rem(80),
+      height: rem(120),
+    },
+  },
+  bottomvector: {
+    position: 'absolute',
+    bottom: rem(-80),
+    left: rem(-20),
+    width: rem(213.6),
+    height: rem(245),
+    [breakpoint(1024)]: {
+      bottom: rem(-60),
+      left: '30%',
+      transform: 'translateX(-50%)',
+      width: rem(200),
+      height: rem(200),
+    },
+  },
+  hand: {
+    position: 'absolute',
+    bottom: rem(-110),
+    right: rem(80),
+    width: rem(200.32),
+    height: rem(235),
+    [breakpoint(1024)]: {
+      bottom: rem(-90),
+      right: '30%',
+      transform: 'translateX(50%)',
+      width: rem(180),
+      height: rem(210),
+    },
+  },
+  content: {
+    marginTop: '20px',
+    [breakpoint(1024)]: {
+      marginTop: '50px',
+      marginLeft: '20px',
       width: '100%',
-      '& tbody':{
-        border:'none',
+    },
+  },
+  header: {
+    fontSize: rem(36),
+    color: '#000',
+    fontFamily: 'Merriweather',
+    fontWeight: '700',
+    width: '95%',
+    textAlign: 'left',
+    lineHeight: rem(49),
+  },
+  orgPrice: {
+    textDecoration: 'line-through',
+    textDecorationColor: 'red',
+    fontWeight: 'bold',
+  },
+  highlightedText: {
+    color: 'red',
+    fontWeight: 'bold',
+  },
+  textTd: {
+    fontWeight: '600',
+  },
+  text: {
+    color: '#3057A2',
+    fontSize: rem(17),
+    textAlign: 'left',
+    lineHeight: rem(24),
+    margin: '30px 5px',
+  },
+  table: {
+    marginTop: '10px',
+    borderCollapse: 'collapse',
+    width: '100%',
+    '& tbody': {
       '& td, & th': {
-        
-        padding: '5px 10px',
+        padding: '5px',
+        textAlign: 'left',
+        border: '1px solid',
+        fontSize: rem(20),
+        fontFamily: 'Golos Text',
+        color: '#313131',
       },
-    }
     },
-  });
-  
+    '& tr': {
+      '& td:first-child, & th:first-child': {
+        borderLeft: 'none',
+        borderBottom: 'none',
+      },
+      '& td:last-child, & th:last-child': {
+        borderRight: 'none',
+        borderBottom: 'none',
+      },
+    },
+    [breakpoint(480)]: {
+      fontSize: '14px',
+    },
+    [breakpoint(320)]: {
+      fontSize: '12px',
+    },
+  },
+});

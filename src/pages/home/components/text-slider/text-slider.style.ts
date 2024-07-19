@@ -2,29 +2,38 @@ import { createUseStyles, Styles } from 'react-jss';
 import { rem } from '../../../../assets/styles/abstracts/functions';
 
 const styles: Styles = {
-  sliderContainer: {
+  carouselContainer: {
+    width: '100%',
+    overflow: 'hidden',
+    position: 'relative',
+    zIndex: 4,
+    height: '60px !important',
+  },
+  slider: {
     display: 'flex',
     alignItems: 'center',
+    '& .slick-slide': {
+      width: 'auto !important',
+    },
+
+  },
+  sliderItem: {
+    display: 'flex !important',
+    alignItems: 'center',
     justifyContent: 'center',
-    height: rem(60),
+    height: rem(60) + '!important',
     backgroundColor: '#FF0000',
     color: '#FFFFFF',
     textAlign: 'center',
     padding: '6px',
     boxSizing: 'border-box',
     margin: '0 10px',
-  },
-  carouselContainer: {
-    width: '100%',
-    overflowX: 'hidden',
-  },
-  slider: {
-    display: 'flex',
-    alignItems: 'center',
+    flex: '0 0 auto',
+    minWidth: '0',
+    marginBottom: 0,
   },
   sliderContent: {
-    display: 'flex',
-    alignItems: 'center',
+    display: 'inline-block',
     fontFamily: 'Merriweather',
     fontSize: rem(20),
     lineHeight: rem(24),
@@ -37,7 +46,7 @@ const styles: Styles = {
     height: rem(8),
     backgroundColor: '#FFFFFF',
     borderRadius: '50%',
-    margin: '0 10px',
+    marginRight: rem(10),
   },
 };
 
