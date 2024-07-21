@@ -225,19 +225,19 @@ export  const useStyles = createUseStyles({
     right: -50,
     zIndex: 1,
     [breakpoint(1200)]: {
-      width: rem(300),
+      width: rem(320),
       height: rem(120),
       right: -40,
     },
     [breakpoint(768)]: {
-      width: rem(200),
+      width: rem(210),
       height: rem(80),
       right: -20,
       top: -50,
     },
     [breakpoint(480)]: {
-      width: rem(150),
-      height: rem(60),
+      width: rem(170),
+      height: rem(70),
       right: 50,
       top: -30,
     },

@@ -13,6 +13,8 @@ const styles: Styles = {
     },
   },
   footer: {
+    padding:'10px 0',
+    height:'100%',
     backgroundColor: colors.footerBg,
     bottom: rem(0),
     right: rem(0),

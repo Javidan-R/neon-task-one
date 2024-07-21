@@ -87,22 +87,22 @@ export const useCustomButtonstyle = createUseStyles({
     },
     [breakpoint(992)]: {
       width: rem(170),
-      height: rem(38),
+      height: rem(48),
       padding: rem(7) + ' ' + rem(14),
     },
     [breakpoint(768)]: {
-      width: rem(160),
-      height: rem(35),
+      width: rem(170),
+      height: rem(45),
       padding: rem(6) + ' ' + rem(12),
     },
     [breakpoint(576)]: {
-      width: rem(150),
-      height: rem(32),
+      width: rem(160),
+      height: rem(42),
       padding: rem(5) + ' ' + rem(10),
     },
     [breakpoint(480)]: {
-      width: rem(140),
-      height: rem(30),
+      width: rem(150),
+      height: rem(40),
       padding: rem(4) + ' ' + rem(8),
     },
     '&:hover': {

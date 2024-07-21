@@ -136,6 +136,20 @@ export const useStyles = createUseStyles({
     width: '95%',
     textAlign: 'left',
     lineHeight: rem(49),
+    [breakpoint(1024)]: {
+      width: '90%',
+      lineHeight: rem(40),
+    },
+    [breakpoint(768)]: {
+      width: '85%',
+      fontSize: rem(30),
+      lineHeight: rem(40),
+    },
+    [breakpoint(350)]: {
+      width: '80%',
+      fontSize: rem(25),
+      lineHeight: rem(20),
+    },
   },
   orgPrice: {
     textDecoration: 'line-through',
