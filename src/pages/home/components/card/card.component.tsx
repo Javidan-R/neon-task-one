@@ -1,7 +1,12 @@
 import React, { useMemo } from 'react';
 import { useStyles } from './card.style'; 
 import { Link } from 'react-router-dom';
-
+export interface CardProps {
+  name: string;
+  title: string;
+  img: string;
+  background:string;
+}
 const Card: React.FC<CardProps> = ({ name, title, img, background }) => {
   const classes = useStyles();
   

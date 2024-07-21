@@ -4,7 +4,6 @@ import {az} from '../assets/lang/az';
 import {en} from '../assets/lang/en';
 import {ru} from '../assets/lang/ru';
 import {environment} from '../core/configs/app.config';
-import {ILang} from '../assets/lang/lang';
 
 const initialState: IState = {
     loader: false,

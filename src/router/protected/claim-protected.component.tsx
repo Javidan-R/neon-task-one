@@ -5,7 +5,7 @@ import {useStore} from '../../store/store.config';
 const ClaimProtectedComponent = ({children}: IAuthProtectedRouteProps) => {
     const user = useStore('user');
     if (!user) {
-        return <Navigate to={Routes.auth} replace />;
+        return <Navigate to={Routes.default} replace />;
     }
 
     return children;

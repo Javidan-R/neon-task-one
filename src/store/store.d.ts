@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ILang } from '../assets/lang/lang';
 
 export interface IState {
@@ -7,7 +8,6 @@ export interface IState {
   locale: any;
   user: any | null;
   contact: IContact | null;
-  steps: IStep[];
 }
 
 export interface ILanguages {
