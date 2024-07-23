@@ -25,7 +25,7 @@ const styles: Styles = {
   footerSm: {
     fontSize: rem(17),
     maxWidth: rem(1366),
-    maxHeight:rem(150),
+    minHeight:rem(150),
     margin: '0 auto',
     padding: '30px 60px 50px 60px',
     [breakpoint(768)]: {
